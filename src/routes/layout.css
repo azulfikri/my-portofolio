@@ -1,0 +1,211 @@
+/* ── Google Fonts (must be first @import) ── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* Class-based dark mode (overrides default prefers-color-scheme) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Neo-brutalism Design Tokens ── */
+@theme {
+	/* Typography */
+	--font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'Space Mono', ui-monospace, monospace;
+
+	/* Brand colors (red-orange) */
+	--color-brand-50: #fff7ed;
+	--color-brand-100: #ffedd5;
+	--color-brand-200: #fed7aa;
+	--color-brand-300: #fdba74;
+	--color-brand-400: #fb923c;
+	--color-brand-500: #f97316;
+	--color-brand-600: #ea580c;
+	--color-brand-700: #c2410c;
+	--color-brand-800: #9a3412;
+	--color-brand-900: #7c2d12;
+
+	/* Accent palette — playful neo-brutalism colors */
+	--color-accent-yellow: #facc15;
+	--color-accent-yellow-light: #fef9c3;
+	--color-accent-pink: #ec4899;
+	--color-accent-pink-light: #fce7f3;
+	--color-accent-blue: #3b82f6;
+	--color-accent-blue-light: #dbeafe;
+	--color-accent-green: #22c55e;
+	--color-accent-green-light: #dcfce7;
+	--color-accent-purple: #a855f7;
+	--color-accent-purple-light: #f3e8ff;
+	--color-accent-cyan: #06b6d4;
+	--color-accent-cyan-light: #cffafe;
+	--color-accent-lime: #84cc16;
+	--color-accent-red: #ef4444;
+
+	/* Surface colors – light */
+	--color-surface-light: #fffbf5;
+	--color-surface-card: #ffffff;
+	--color-surface-muted: #f5f0e8;
+
+	/* Surface colors – dark */
+	--color-surface-dark: #1a1a2e;
+	--color-surface-dark-card: #23233d;
+	--color-surface-dark-muted: #2d2d4a;
+
+	/* Text colors */
+	--color-ink: #1a1a2e;
+	--color-ink-muted: #4a4a68;
+	--color-ink-inverted: #fffbf5;
+	--color-ink-dark-muted: #a0a0c0;
+
+	/* Border */
+	--color-border-brutal: #1a1a2e;
+	--color-border-brutal-dark: #fffbf5;
+
+	/* Hard shadows (neo-brutalism signature) */
+	--shadow-brutal-sm: 3px 3px 0px 0px #1a1a2e;
+	--shadow-brutal: 5px 5px 0px 0px #1a1a2e;
+	--shadow-brutal-lg: 8px 8px 0px 0px #1a1a2e;
+	--shadow-brutal-xl: 12px 12px 0px 0px #1a1a2e;
+	--shadow-brutal-brand: 5px 5px 0px 0px #ea580c;
+	--shadow-brutal-yellow: 5px 5px 0px 0px #facc15;
+	--shadow-brutal-pink: 5px 5px 0px 0px #ec4899;
+	--shadow-brutal-blue: 5px 5px 0px 0px #3b82f6;
+
+	/* Dark mode shadows */
+	--shadow-brutal-dark-sm: 3px 3px 0px 0px #fffbf5;
+	--shadow-brutal-dark: 5px 5px 0px 0px #fffbf5;
+	--shadow-brutal-dark-lg: 8px 8px 0px 0px #fffbf5;
+	--shadow-brutal-dark-xl: 12px 12px 0px 0px #fffbf5;
+	--shadow-brutal-dark-brand: 5px 5px 0px 0px #fb923c;
+
+	/* Border widths */
+	--border-brutal: 3px;
+
+	/* Transition */
+	--transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Base styles ── */
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+body {
+	font-family: var(--font-sans);
+	background-color: var(--color-surface-light);
+	color: var(--color-ink);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+.dark body,
+html.dark body {
+	background-color: var(--color-surface-dark);
+	color: var(--color-ink-inverted);
+}
+
+/* ── Dot grid pattern (neo-brutalism texture) ── */
+.dot-pattern {
+	background-image: radial-gradient(circle, #1a1a2e 1px, transparent 1px);
+	background-size: 20px 20px;
+}
+
+.dark .dot-pattern,
+html.dark .dot-pattern {
+	background-image: radial-gradient(circle, rgba(255, 251, 245, 0.15) 1px, transparent 1px);
+}
+
+/* ── Diagonal stripes pattern ── */
+.stripe-pattern {
+	background-image: repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent 5px,
+		rgba(26, 26, 46, 0.05) 5px,
+		rgba(26, 26, 46, 0.05) 10px
+	);
+}
+
+.dark .stripe-pattern,
+html.dark .stripe-pattern {
+	background-image: repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent 5px,
+		rgba(255, 251, 245, 0.03) 5px,
+		rgba(255, 251, 245, 0.03) 10px
+	);
+}
+
+/* ── Utility classes ── */
+.brutal-border {
+	border: var(--border-brutal) solid var(--color-border-brutal);
+}
+
+.dark .brutal-border,
+html.dark .brutal-border {
+	border-color: var(--color-border-brutal-dark);
+}
+
+/* Decorative rotated element */
+.brutal-rotate-sm {
+	transform: rotate(-1deg);
+}
+
+.brutal-rotate-sm:hover {
+	transform: rotate(0deg);
+}
+
+/* Sticker / badge effect */
+.brutal-sticker {
+	display: inline-block;
+	transform: rotate(-2deg);
+	transition: transform 0.2s ease;
+}
+
+.brutal-sticker:hover {
+	transform: rotate(0deg) scale(1.05);
+}
+
+/* Focus style for accessibility */
+*:focus-visible {
+	outline: var(--border-brutal) solid var(--color-brand-500);
+	outline-offset: 2px;
+}
+
+/* Highlighted text */
+.text-highlight {
+	background: linear-gradient(transparent 60%, var(--color-accent-yellow) 60%);
+}
+
+.dark .text-highlight,
+html.dark .text-highlight {
+	background: linear-gradient(transparent 60%, rgba(250, 204, 21, 0.3) 60%);
+}
+
+/* ── Keyframe Animations ── */
+@keyframes marquee {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
