@@ -27,4 +27,5 @@ export interface Project {
 	links: ProjectLinks;
 	images: ProjectImage[];
 	featured: boolean;
+	platform?: 'mobile' | 'web';
 }

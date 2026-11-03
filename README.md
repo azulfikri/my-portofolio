@@ -46,11 +46,14 @@ Web portofolio personal dan showcase studi kasus rekayasa perangkat lunak oleh *
    * *Stack:* Vue.js, Express.js, Prisma ORM, Bootstrap, PostgreSQL.
    * *Repo:* [Frontend](https://github.com/azulfikri/inventory-management-frontend-axicode) & [Backend](https://github.com/azulfikri/inventory-management-backend-axicode)
    * *Sorotan:* Studi independen MSIB Batch 7 di PT. Stechoq Robotika Indonesia (Industri 4.0 Manufaktur).
-3. **Monitoring Kandang Ayam Petelur (2026)**
+3. **Sistem Misting Otomatis Kumbung Jamur (2025)**
+   * *Stack:* ESP32, DHT22, Blynk IoT, Relay Module, Pompa & Misting Sprayer.
+   * *Sorotan:* Proyek Praktik Kerja di Cah Fungi Sampang untuk otomatisasi pengabutan & stabilisasi mikroklimat kumbung via aplikasi mobile Blynk.
+4. **Monitoring Kandang Ayam Petelur (2026)**
    * *Stack:* Flutter, Supabase, ESP32, Sensor Lingkungan IoT.
    * *Repo:* [github.com/azulfikri/kandang-monitoring-app](https://github.com/azulfikri/kandang-monitoring-app)
    * *Sorotan:* Aplikasi mobile untuk pemantauan suhu, kelembapan, dan gas amonia secara real-time.
-4. **Sistem Booking Lapangan Olahraga (2025)**
+5. **Sistem Booking Lapangan Olahraga (2025)**
    * *Stack:* Laravel, Tailwind CSS, MySQL.
    * *Repo:* [github.com/azulfikri/sistem-booking-lapangan](https://github.com/azulfikri/sistem-booking-lapangan)
    * *Sorotan:* Manajemen reservasi slot jadwal lapangan interaktif dan validasi bukti pembayaran.

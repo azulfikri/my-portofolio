@@ -29,16 +29,40 @@
 
 	<!-- Image -->
 	<div
-		class="aspect-video w-full overflow-hidden border-b-[3px] border-border-brutal bg-surface-muted dark:border-border-brutal-dark dark:bg-surface-dark-muted"
+		class="relative aspect-[16/10] w-full overflow-hidden border-b-[3px] border-border-brutal bg-surface-muted dark:border-border-brutal-dark dark:bg-surface-dark-muted"
 	>
 		{#if project.images.length > 0}
-			<img
-				src={project.images[0].src}
-				alt={project.images[0].alt}
-				class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-				loading="lazy"
-				decoding="async"
-			/>
+			{#if project.platform === 'mobile'}
+				<!-- Mobile presentation: full height phone mockup, perfectly centered -->
+				<div class="flex h-full w-full items-center justify-center p-3 sm:p-4">
+					<img
+						src={project.images[0].src}
+						alt={project.images[0].alt}
+						class="h-full w-auto max-h-full rounded-lg border-2 border-border-brutal object-contain shadow-brutal-sm transition-transform duration-300 group-hover:scale-105 dark:border-border-brutal-dark"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+				<span
+					class="absolute top-2.5 right-2.5 border-2 border-border-brutal bg-accent-yellow px-2 py-0.5 font-mono text-[10px] font-bold text-ink uppercase shadow-brutal-sm dark:border-border-brutal-dark"
+				>
+					📱 Mobile App
+				</span>
+			{:else}
+				<!-- Web presentation: full cover landscape preview -->
+				<img
+					src={project.images[0].src}
+					alt={project.images[0].alt}
+					class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+					loading="lazy"
+					decoding="async"
+				/>
+				<span
+					class="absolute top-2.5 right-2.5 border-2 border-border-brutal bg-accent-blue px-2 py-0.5 font-mono text-[10px] font-bold text-white uppercase shadow-brutal-sm dark:border-border-brutal-dark"
+				>
+					💻 Web App
+				</span>
+			{/if}
 		{:else}
 			<div
 				class="flex h-full w-full items-center justify-center font-mono text-sm text-ink-muted dark:text-ink-dark-muted"

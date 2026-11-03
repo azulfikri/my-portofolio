@@ -79,17 +79,40 @@
 
 			<!-- ── Hero Image ── -->
 			{#if data.project.images.length > 0}
-				<div
-					class="mb-10 overflow-hidden border-[3px] border-border-brutal bg-surface-muted shadow-brutal dark:border-border-brutal-dark dark:bg-surface-dark-muted dark:shadow-brutal-dark"
-				>
-					<img
-						src={data.project.images[0].src}
-						alt={data.project.images[0].alt}
-						class="w-full object-cover"
-						loading="eager"
-						decoding="async"
-					/>
-				</div>
+				{#if data.project.platform === 'mobile'}
+					<!-- Mobile Presentation: Centered phone mockup frame (never oversized) -->
+					<div
+						class="mb-10 flex flex-col items-center justify-center border-[3px] border-border-brutal bg-surface-muted p-6 shadow-brutal sm:p-10 dark:border-border-brutal-dark dark:bg-surface-dark-muted dark:shadow-brutal-dark"
+					>
+						<div
+							class="max-w-67.5 sm:max-w-77.5 overflow-hidden rounded-2xl border-[3px] border-border-brutal shadow-brutal-lg transition-transform duration-300 hover:scale-[1.02] dark:border-border-brutal-dark"
+						>
+							<img
+								src={data.project.images[0].src}
+								alt={data.project.images[0].alt}
+								class="h-auto w-full object-contain"
+								loading="eager"
+								decoding="async"
+							/>
+						</div>
+						<div class="mt-4 flex items-center gap-2 font-mono text-xs font-bold text-ink-muted uppercase dark:text-ink-dark-muted">
+							<span>📱 Tampilan Antarmuka Aplikasi Mobile</span>
+						</div>
+					</div>
+				{:else}
+					<!-- Web Presentation: Full-width responsive banner -->
+					<div
+						class="mb-10 overflow-hidden border-[3px] border-border-brutal bg-surface-muted shadow-brutal dark:border-border-brutal-dark dark:bg-surface-dark-muted dark:shadow-brutal-dark"
+					>
+						<img
+							src={data.project.images[0].src}
+							alt={data.project.images[0].alt}
+							class="w-full object-cover"
+							loading="eager"
+							decoding="async"
+						/>
+					</div>
+				{/if}
 			{/if}
 
 			<!-- ── Content Sections ── -->
@@ -177,12 +200,12 @@
 						<div class="mt-4 grid gap-4 sm:grid-cols-2">
 							{#each data.project.images.slice(1) as image (image.src)}
 								<div
-									class="overflow-hidden border-[3px] border-border-brutal shadow-brutal-sm dark:border-border-brutal-dark dark:shadow-brutal-dark-sm"
+									class="flex justify-center overflow-hidden border-[3px] border-border-brutal bg-surface-muted p-3 shadow-brutal-sm dark:border-border-brutal-dark dark:bg-surface-dark-muted dark:shadow-brutal-dark-sm"
 								>
 									<img
 										src={image.src}
 										alt={image.alt}
-										class="w-full object-cover transition-transform duration-300 hover:scale-105"
+										class="{data.project.platform === 'mobile' ? 'max-h-80 w-auto rounded-lg object-contain' : 'w-full object-cover'} transition-transform duration-300 hover:scale-105"
 										loading="lazy"
 										decoding="async"
 									/>

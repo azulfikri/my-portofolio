@@ -31,14 +31,14 @@
 		},
 		{
 			title: 'IoT & Otomasi',
-			skills: ['ESP32', 'Arduino', 'IoT Sensors', 'Relay Automation'],
+			skills: ['ESP32', 'DHT22', 'Blynk IoT', 'Relay Automation'],
 			color: 'bg-accent-yellow-light dark:bg-accent-yellow/20',
 			accent: 'text-accent-yellow dark:text-accent-yellow'
 		}
 	];
 
 	const statHighlights = [
-		{ value: '4+', label: 'Proyek Selesai', color: 'bg-accent-yellow', rotate: '-rotate-1' },
+		{ value: '5', label: 'Proyek Selesai', color: 'bg-accent-yellow', rotate: '-rotate-1' },
 		{ value: 'YOLOv8', label: 'AI & CV (Skripsi)', color: 'bg-accent-pink-light', rotate: 'rotate-1' },
 		{ value: 'MSIB', label: 'Pengalaman Magang', color: 'bg-accent-blue-light', rotate: '-rotate-0.5' },
 		{ value: '>90%', label: 'Akurasi AI (mAP50)', color: 'bg-accent-green-light', rotate: 'rotate-0.5' }
