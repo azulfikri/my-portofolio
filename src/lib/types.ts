@@ -8,6 +8,8 @@ export interface ProjectImage {
 export interface ProjectLinks {
 	demo?: string;
 	repo?: string;
+	repoFrontend?: string;
+	repoBackend?: string;
 }
 
 /** Core project data model (PRD bab 8) */

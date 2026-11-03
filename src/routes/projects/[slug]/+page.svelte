@@ -8,6 +8,19 @@
 <svelte:head>
 	<title>{data.project.title} — Achmad Zulfikri Portofolio</title>
 	<meta name="description" content={data.project.summary} />
+	<meta name="author" content="Achmad Zulfikri" />
+	<!-- Open Graph / WhatsApp / LinkedIn -->
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="{data.project.title} — Achmad Zulfikri Portofolio" />
+	<meta property="og:description" content={data.project.summary} />
+	{#if data.project.images.length > 0}
+		<meta property="og:image" content={data.project.images[0].src} />
+		<meta name="twitter:image" content={data.project.images[0].src} />
+	{/if}
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="{data.project.title} — Achmad Zulfikri Portofolio" />
+	<meta name="twitter:description" content={data.project.summary} />
 </svelte:head>
 
 <div class="mx-auto max-w-4xl px-5 py-10 md:py-14">
@@ -73,6 +86,8 @@
 						src={data.project.images[0].src}
 						alt={data.project.images[0].alt}
 						class="w-full object-cover"
+						loading="eager"
+						decoding="async"
 					/>
 				</div>
 			{/if}
@@ -169,6 +184,7 @@
 										alt={image.alt}
 										class="w-full object-cover transition-transform duration-300 hover:scale-105"
 										loading="lazy"
+										decoding="async"
 									/>
 								</div>
 							{/each}
@@ -177,7 +193,7 @@
 				{/if}
 
 				<!-- Action Buttons -->
-				{#if data.project.links.demo || data.project.links.repo}
+				{#if data.project.links.demo || data.project.links.repo || data.project.links.repoFrontend || data.project.links.repoBackend}
 					<div
 						class="flex flex-wrap items-center gap-4 border-t-[3px] border-border-brutal pt-6 dark:border-border-brutal-dark"
 					>
@@ -189,6 +205,16 @@
 						{#if data.project.links.repo}
 							<Button variant="secondary" size="lg" href={data.project.links.repo} external>
 								📦 Lihat Kode Repo ↗
+							</Button>
+						{/if}
+						{#if data.project.links.repoFrontend}
+							<Button variant="secondary" size="lg" href={data.project.links.repoFrontend} external>
+								📦 Repo Frontend ↗
+							</Button>
+						{/if}
+						{#if data.project.links.repoBackend}
+							<Button variant="secondary" size="lg" href={data.project.links.repoBackend} external>
+								📦 Repo Backend ↗
 							</Button>
 						{/if}
 					</div>

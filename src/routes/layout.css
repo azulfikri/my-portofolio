@@ -91,6 +91,17 @@ html {
 	scroll-behavior: smooth;
 }
 
+/* ── Keyboard Accessibility: Neo-brutalist focus indicator ── */
+:focus-visible {
+	outline: 3px solid var(--color-brand-500);
+	outline-offset: 3px;
+}
+
+.dark :focus-visible {
+	outline: 3px solid var(--color-brand-400);
+	outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;

@@ -189,6 +189,23 @@
 		name="description"
 		content="Web portofolio Achmad Zulfikri — Fullstack, Computer Vision & IoT Developer. Menampilkan studi kasus proyek deteksi cabai YOLOv8, warehouse management, dan monitoring kandang ayam."
 	/>
+	<meta name="author" content="Achmad Zulfikri" />
+	<!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Achmad Zulfikri — Web Portofolio & Showcase Proyek" />
+	<meta
+		property="og:description"
+		content="Web portofolio Achmad Zulfikri — Fullstack, Computer Vision & IoT Developer. Menampilkan studi kasus proyek deteksi cabai YOLOv8, warehouse management, dan monitoring kandang ayam."
+	/>
+	<meta property="og:image" content="/images/profile.png" />
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Achmad Zulfikri — Web Portofolio & Showcase Proyek" />
+	<meta
+		name="twitter:description"
+		content="Web portofolio Achmad Zulfikri — Fullstack, Computer Vision & IoT Developer. Menampilkan studi kasus proyek deteksi cabai YOLOv8, warehouse management, dan monitoring kandang ayam."
+	/>
+	<meta name="twitter:image" content="/images/profile.png" />
 </svelte:head>
 
 <div class="mx-auto max-w-6xl px-5 py-8 md:py-16">

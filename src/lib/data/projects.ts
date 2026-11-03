@@ -17,9 +17,9 @@ export const projects: Project[] = [
 		results:
 			'Model mencapai mAP50 di atas 90% pada data uji; waktu inferensi real-time rata-rata di bawah 200ms per gambar.',
 		links: {
-			repo: 'https://github.com/'
+			repo: 'https://github.com/azulfikri/smart-chili-harvest'
 		},
-		images: [{ src: '/images/cabai-hero.svg', alt: 'Antarmuka web deteksi kematangan cabai' }],
+		images: [{ src: '/images/deteksi-cabe.jpeg', alt: 'Antarmuka web deteksi kematangan cabai YOLOv8' }],
 		featured: true
 	},
 	{
@@ -37,11 +37,14 @@ export const projects: Project[] = [
 			'Mengembangkan antarmuka Material Supply menggunakan Vue.js dan Bootstrap, didukung backend REST API menggunakan Express.js, Prisma ORM, serta basis data PostgreSQL untuk pencatatan transaksi masuk-keluar barang secara real-time.',
 		results:
 			'Meningkatkan akurasi pencatatan stok gudang dan mempermudah sinkronisasi data material antar divisi.',
-		links: {},
+		links: {
+			repoFrontend: 'https://github.com/azulfikri/inventory-management-frontend-axicode',
+			repoBackend: 'https://github.com/azulfikri/inventory-management-backend-axicode'
+		},
 		images: [
 			{
-				src: '/images/warehouse-hero.svg',
-				alt: 'Dashboard warehouse management system'
+				src: '/images/material-supply.jpeg',
+				alt: 'Dashboard Material Supply Warehouse Management System'
 			}
 		],
 		featured: true
@@ -62,11 +65,11 @@ export const projects: Project[] = [
 		results:
 			'Memudahkan peternak memantau parameter suhu, kelembapan, dan amonia kapan saja langsung dari smartphone secara efisien.',
 		links: {
-			repo: 'https://github.com/'
+			repo: 'https://github.com/azulfikri/kandang-monitoring-app'
 		},
 		images: [
 			{
-				src: '/images/kandang-hero.svg',
+				src: '/images/monitoring-kandang-ayam.jpeg',
 				alt: 'Aplikasi mobile monitoring kondisi kandang ayam petelur'
 			}
 		],
@@ -87,10 +90,12 @@ export const projects: Project[] = [
 			'Membangun aplikasi web dengan Laravel dan antarmuka modern Tailwind CSS serta basis data MySQL untuk visualisasi slot jadwal lapangan secara real-time, pengunggahan bukti pembayaran, dan konfirmasi pemesanan otomatis.',
 		results:
 			'Menghilangkan potensi konflik jadwal dan memudahkan manajemen reservasi lapangan oleh pihak pengelola.',
-		links: {},
+		links: {
+			repo: 'https://github.com/azulfikri/sistem-booking-lapangan'
+		},
 		images: [
 			{
-				src: '/images/booking-hero.svg',
+				src: '/images/booking-lapangan.png',
 				alt: 'Halaman pemesanan slot lapangan olahraga'
 			}
 		],
